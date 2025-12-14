@@ -1,4 +1,6 @@
+class Sphere{
 
+}
 class Circle{
 
 }
