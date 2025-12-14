@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class Sphere{
     private int radius; // properties should be acces through getters for encapsulation purposes this applies to all of them
     public int getradius(){
@@ -6,25 +8,25 @@ class Sphere{
     public void setRadius(int radius){
         this.radius = radius;
     }
-    public int getVolume(){
+    public double getVolume(){
         return radius*radius*radius*4/3*Math.PI;
     }
-    public int getArea(){
+    public double getArea(){
         return 4*radius*Math.PI;
     }
 
 
 }
 class Circle{
-int radius;
+    int radius;
     public int getradius(){
-    return radius;
-}
+        return radius;
+    }
     public void setradius(int radius){}
-    public int getArea(){
+    public double getArea(){
         return radius*radius*Math.PI;
     }
-    public int getCircumference(){
+    public double getCircumference(){
         return radius*2*Math.PI;
     }
 }
@@ -91,7 +93,8 @@ class Matrix{ //once a matrix is defined it should not change its size
     }
     public Matrix multiply(Matrix other) { //O(height * width * other.width)
         if (this.width != other.height) {
-            System.out.println("The matrices' sizes don't match");;
+            System.out.println("The matrices' sizes don't match");
+            return null;
         }else {
             Matrix result = new Matrix(this.height, other.width);
             for (int i = 0; i < result.height; i++) {
@@ -109,7 +112,24 @@ class Matrix{ //once a matrix is defined it should not change its size
 }
 class Main {
     void main() {
+        Matrix m1 = new Matrix(3, 4);
+        System.out.println("Matrix m1:");
+        m1.print();
 
-  }
+        System.out.println("Spiral order:");
+        m1.printSpiral();
+
+        Matrix transposed = m1.transpose();
+        System.out.println("Transposed matrix:");
+        transposed.print();
+
+        Matrix m2 = new Matrix(4, 2);
+        System.out.println("Matrix m2:");
+        m2.print();
+
+        Matrix multiplied = m1.multiply(m2);
+        System.out.println("Multiplied matrix (m1 * m2):");
+        multiplied.print();
+    }
 
 }
