@@ -1,25 +1,31 @@
 class Sphere{
-    private int diameter; // properties should be acces through getters for encapsulation purposes this applies to all of them
-    int getDiameter(){
-        return diameter;
+    private int radius; // properties should be acces through getters for encapsulation purposes this applies to all of them
+    int getradius(){
+        return radius;
     }
-    void setDiameter(int diameter){
-        this.diameter = diameter;
+    void setradius(int radius){
+        this.radius = radius;
+    }
+    int getVolume(){
+        return radius*radius*radius*4/3*Math.PI;
+    }
+    int getArea(){
+        return 4*radius*Math.PI;
     }
 
 
 }
 class Circle{
-int diameter;
-int getDiameter(){
-    return diameter;
+int radius;
+int getradius(){
+    return radius;
 }
-void setDiameter(int diameter){}
+void setradius(int radius){}
     int getArea(){
-        return diameter*diameter/2*Math.PI;
+        return radius*radius*Math.PI;
     }
     int getCircumference(){
-        return diameter*Math.PI;
+        return radius*2*Math.PI;
     }
 }
 
