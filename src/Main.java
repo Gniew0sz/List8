@@ -41,7 +41,7 @@ class Matrix{ //once a matrix is defined it should not change its size
     }
     public void setWidth(int width){}
     public void setHeight(int height){}
-    public Matrix(int height, int width) {
+    public Matrix(int height, int width) { // O(height*width)
         this.height = height;
         this.width = width;
         this.data = new int[height][width];
@@ -60,7 +60,7 @@ class Matrix{ //once a matrix is defined it should not change its size
             System.out.println();
         }
     }
-    public Matrix transpose() {
+    public Matrix transpose() { //O(height*width)
         Matrix transposed = new Matrix(width, height);
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {
@@ -69,7 +69,7 @@ class Matrix{ //once a matrix is defined it should not change its size
         }
         return transposed;
     }
-    public void printSpiral() {
+    public void printSpiral() {  // O(height * width)
         int top = 0, bottom = height - 1;
         int left = 0, right = width - 1;
 
@@ -89,7 +89,7 @@ class Matrix{ //once a matrix is defined it should not change its size
         }
         System.out.println();
     }
-    public Matrix multiply(Matrix other) {
+    public Matrix multiply(Matrix other) { //O(height * width * other.width)
         if (this.width != other.height) {
             System.out.println("The matrices' sizes don't match");;
         }else {
