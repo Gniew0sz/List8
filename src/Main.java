@@ -38,6 +38,8 @@ class Matrix{ //once a matrix is defined it should not change its size
     int getHeight(){
         return height;
     }
+    void setWidth(int width){}
+    void setHeight(int height){}
 
 }
 class Main {
