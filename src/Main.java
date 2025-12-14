@@ -1,15 +1,15 @@
 class Sphere{
     private int radius; // properties should be acces through getters for encapsulation purposes this applies to all of them
-    int getradius(){
+    public int getradius(){
         return radius;
     }
-    void setradius(int radius){
+    public void setRadius(int radius){
         this.radius = radius;
     }
-    int getVolume(){
+    public int getVolume(){
         return radius*radius*radius*4/3*Math.PI;
     }
-    int getArea(){
+    public int getArea(){
         return 4*radius*Math.PI;
     }
 
@@ -17,29 +17,30 @@ class Sphere{
 }
 class Circle{
 int radius;
-int getradius(){
+    public int getradius(){
     return radius;
 }
-void setradius(int radius){}
-    int getArea(){
+    public void setradius(int radius){}
+    public int getArea(){
         return radius*radius*Math.PI;
     }
-    int getCircumference(){
+    public int getCircumference(){
         return radius*2*Math.PI;
     }
 }
 
 class Matrix{ //once a matrix is defined it should not change its size
-    int width;
-    int height;
-    int getWidth(){
+    private final int width;
+    private final int height;
+    private final int data[][];
+    public int getWidth(){
         return width;
     }
-    int getHeight(){
+    public int getHeight(){
         return height;
     }
-    void setWidth(int width){}
-    void setHeight(int height){}
+    public void setWidth(int width){}
+    public void setHeight(int height){}
 
 }
 class Main {
